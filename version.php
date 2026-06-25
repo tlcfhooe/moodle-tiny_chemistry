@@ -5,6 +5,7 @@
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
+// (at your option) any later version.
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -19,13 +20,13 @@
  *
  * @package    tiny_chemistry
  * @copyright  2022 Huong Nguyen <huongnv13@gmail.com>
- * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 5.1
+ * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 5.2
  * by Teaching and Learning Center (TLC, tlc@fh-ooe.at), FH Upper Austria
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2025100600;
-$plugin->requires  = 2025092600;
+$plugin->version   = 2026042000;
+$plugin->requires  = 2026041000;
 $plugin->component = 'tiny_chemistry';

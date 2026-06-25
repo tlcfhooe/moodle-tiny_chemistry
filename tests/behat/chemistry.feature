@@ -14,6 +14,7 @@ Feature: Chemistry editor
     And I click on the "Chemistry editor" button for the "Description" TinyMCE editor
     And the "class" attribute of "Edit chemistry using" "field" should contain "text-ltr"
     And I set the field "Edit chemistry using" to " = 1 \div 0"
+    # The normal pointer click no longer reaches the button in MathJax 4.0.0. Force the click via JS instead.
     And I click on "\infty" "button"
     And I click on "Save chemistry" "button"
     And I click on "Update profile" "button"

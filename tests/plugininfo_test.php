@@ -25,9 +25,9 @@ use advanced_testcase;
  *
  * @package     tiny_chemistry
  * @covers      \tiny_chemistry\plugininfo::get_plugin_configuration_for_external
- * @copyright   2025 Moodle Pty Ltd
- * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 5.1
+ * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 5.2
  * by Teaching and Learning Center (TLC, tlc@fh-ooe.at), FH Upper Austria
+ * @copyright   2025 Moodle Pty Ltd
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 final class plugininfo_test extends advanced_testcase {
@@ -91,7 +91,7 @@ final class plugininfo_test extends advanced_testcase {
                     'groupname' => get_string('librarygroup4', 'tiny_chemistry'),
                     'elements' => explode("\n", trim(get_config('tiny_chemistry', 'librarygroup4'))),
                 ],
-				                [
+				[
                     'key' => 'group5',
                     'groupname' => get_string('librarygroup5', 'tiny_chemistry'),
                     'elements' => explode("\n", trim(get_config('tiny_chemistry', 'librarygroup5'))),

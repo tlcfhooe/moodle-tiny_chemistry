@@ -1,1 +1,1 @@
-helplinktext,tiny_chemistry
+helplinktext,tiny_equation
