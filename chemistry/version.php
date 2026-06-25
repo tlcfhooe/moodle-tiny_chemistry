@@ -19,13 +19,13 @@
  *
  * @package    tiny_chemistry
  * @copyright  2022 Huong Nguyen <huongnv13@gmail.com>
- * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 4.5
+ * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 5.1
  * by Teaching and Learning Center (TLC, tlc@fh-ooe.at), FH Upper Austria
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024100700;
-$plugin->requires  = 2024100100;
+$plugin->version   = 2025100600;
+$plugin->requires  = 2025092600;
 $plugin->component = 'tiny_chemistry';

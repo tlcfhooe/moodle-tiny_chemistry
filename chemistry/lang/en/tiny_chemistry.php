@@ -19,7 +19,7 @@
  *
  * @package    tiny_chemistry
  * @copyright  2022 Huong Nguyen <huongnv13@gmail.com>
- * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 4.5
+ * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 5.1
  * by Teaching and Learning Center (TLC, tlc@fh-ooe.at), FH Upper Austria
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -27,6 +27,7 @@
 $string['buttontitle'] = 'Chemistry editor';
 $string['cursorinfo'] = 'An arrow indicates the position that new elements from the element library will be inserted.';
 $string['editchemistry'] = 'Edit chemistry using <a href="{$a}" target="_blank">TeX</a>';
+$string['equation:use'] = 'Use TinyMCE chemistry editor';
 $string['librarygroup1'] = 'Formulae';
 $string['librarygroup1_desc'] = 'TeX commands listed on the formulas tab.';
 $string['librarygroup2'] = 'Symbols and units';

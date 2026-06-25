@@ -1,16 +1,16 @@
 # tiny_chemistry
-Chemistry equation editor for Tiny Editor in Moodle (Version 4.5) using the mhchem extension in MathJax/TeX.
+Chemistry equation editor for Tiny Editor in Moodle (Version 5.1) using the mhchem extension in MathJax/TeX.
 This plugin is based on equation editor (original by Huong Nguyen <huongnv13@gmail.com>) and was modified by Teaching and Learning Center (TLC, tlc@fh-ooe.at), FH Upper Austria for chemistry formulas.
 
 ## Version info
 
-### Plugin-Version: 2024100700 (Moodle 4.5)
+### Plugin-Version: 2025100600 (Moodle 5.1)
 
 * Prepare first version of chemistry editor
 
 ## Installation
-Download the zip file, unzip to a folder. Rename this folder to chemistry and copy to the lib/editor/tiny/plugins folder of your Moodle.
-Please note this version is only valid for new Tiny MCE Editor in Moodle 4.5.
+Download the zip file, unzip to a folder. Rename this folder to chemistry and copy to the public/lib/editor/tiny/plugins folder of your Moodle.
+Please note this version is only valid for new Tiny MCE Editor in Moodle 5.1
 
 Then visit the Admin notifications page of your Moodle to complete the installation.
 

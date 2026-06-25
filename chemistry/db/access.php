@@ -15,27 +15,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Privacy Subsystem implementation for the Chemistry plugin for TinyMCE.
+ * Capabilities for the tiny_chemistry plugin.
  *
  * @package    tiny_chemistry
- * @copyright  2022 Huong Nguyen <huongnv13@gmail.com>
+ * @copyright  2025 David Woloszyn <david.woloszyn@moodle.com>
  * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 5.1
  * by Teaching and Learning Center (TLC, tlc@fh-ooe.at), FH Upper Austria
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace tiny_chemistry\privacy;
+defined('MOODLE_INTERNAL') || die();
 
-/**
- * Privacy Subsystem implementation for the Chemistry plugin for TinyMCE.
- *
- * @package    tiny_chemistry
- * @copyright  2022 Huong Nguyen <huongnv13@gmail.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class provider implements \core_privacy\local\metadata\null_provider {
-
-    public static function get_reason(): string {
-        return 'privacy:metadata';
-    }
-}
+$capabilities = [
+    'tiny/chemistry:use' => [
+        'captype' => 'read',
+        'contextlevel' => CONTEXT_MODULE,
+        'archetypes' => [
+            'user' => CAP_ALLOW,
+        ],
+    ],
+];

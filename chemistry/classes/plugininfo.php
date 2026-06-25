@@ -19,7 +19,7 @@
  *
  * @package    tiny_chemistry
  * @copyright  2022 Huong Nguyen <huongnv13@gmail.com>
- * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 4.5
+ * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 5.1
  * by Teaching and Learning Center (TLC, tlc@fh-ooe.at), FH Upper Austria
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -32,6 +32,7 @@ use editor_tiny\editor;
 use editor_tiny\plugin;
 use editor_tiny\plugin_with_buttons;
 use editor_tiny\plugin_with_configuration;
+use editor_tiny\plugin_with_configuration_for_external;
 use editor_tiny\plugin_with_menuitems;
 use filter_manager;
 
@@ -40,11 +41,13 @@ use filter_manager;
  *
  * @package    tiny_chemistry
  * @copyright  2022 Huong Nguyen <huongnv13@gmail.com>
- * This plugin based on tiny_equation from Huong Nguyen <huongnv13@gmail.com> was adapted for tiny_chemistry for Moodle 4.5
- * by Teaching and Learning Center (TLC, tlc@fh-ooe.at), FH Upper Austria
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menuitems, plugin_with_configuration {
+class plugininfo extends plugin implements
+    plugin_with_buttons,
+    plugin_with_menuitems,
+    plugin_with_configuration,
+    plugin_with_configuration_for_external {
 
     public static function get_available_buttons(): array {
         return [
@@ -98,7 +101,7 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
                 'groupname' => get_string('librarygroup4', 'tiny_chemistry'),
                 'elements' => explode("\n", trim(get_config('tiny_chemistry', 'librarygroup4'))),
             ],
-			[
+			            [
                 'key' => 'group5',
                 'groupname' => get_string('librarygroup5', 'tiny_chemistry'),
                 'elements' => explode("\n", trim(get_config('tiny_chemistry', 'librarygroup5'))),
@@ -110,6 +113,16 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
             'contextid' => $context->id,
             'libraries' => $libraries,
             'texdocsurl' => get_docs_url('Using_TeX_Notation'),
+        ];
+    }
+
+    #[\Override]
+    public static function get_plugin_configuration_for_external(context $context): array {
+        $settings = self::get_plugin_configuration_for_context($context, [], []);
+        return [
+            'texfilter' => $settings['texfilter'] ? '1' : '0',
+            'libraries' => json_encode($settings['libraries']),
+            'texdocsurl' => $settings['texdocsurl'],
         ];
     }
 }
