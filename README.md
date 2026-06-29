@@ -16,7 +16,9 @@ Then visit the Admin notifications page of your Moodle to complete the installat
 
 After installation you need to complete the following steps:
 
-### Mathjax filter config
+## Mathjax filter config
+
+### Option A:
 Add additionally to standard Mathjax configuration the mhchem-config to the Moodle MathJax filter configuration:
 
 Edit Administration > Site administration > Plugins > Filters > MathJax > MathJax configuration to include:
@@ -28,8 +30,36 @@ MathJax.Hub.Config({
 ```
 Please note: do not delete standard Mathjax config in Moodle!
 
-### Chemistry editor tabs config
+### Option B:
+We have noticed that there are sometimes problems with the displaying of the formulas (problems with displaying "Bonds and arrows") and can therefore recommend the following configuration via Administration > Site administration > Plugins > Filters > MathJax > MathJax configuration:
+
+Change MathJax URL (filter_mathjaxloader | httpsurl)
+
+```
+https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+```
+
+Change MathJax Configuration (filter_mathjaxloader | mathjaxconfig) to:
+
+```
+{
+    "tex": {
+        "packages": {"[+]": ["mhchem"]},
+        "inlineMath": [["\\(", "\\)"]],
+        "displayMath": [["$$", "$$"], ["\\[", "\\]"]]
+    },
+    "loader": {
+        "load": ["[tex]/mhchem"]
+    }
+}
+```
+
+We also recommend disabling the TeX Notation filter (Edit Administration > Site administration > Plugins > Filters > Overview)
+
+
+
+## Chemistry editor tabs config
 Add specific TeX commands to the different tabs. Maybe you can use the standard settings below each tab.
 
-### Purge caches
+## Purge caches
 You may need to Purge all caches on your browser and your Moodle server: Administration > Site administration > Development > Purge all caches
